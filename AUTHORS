@@ -2,8 +2,9 @@
 # Developers                                                           #
 ########################################################################
 
-Lead Developer:
+Lead Developers:
 * Alex Bevilacqua
+* Rob Spearman
 
 Contributors:
 * guilhem
@@ -21,6 +22,9 @@ Contributors:
 * Daniel Felix
 * Messinger
 * xarlie
+* Eduard Kuleshov
+* Axel Kämpfe
+* jdkemme
 
 Documentation:
 * Alan Bowman
@@ -56,7 +60,7 @@ French:
 * myorama
 * Xavier Calland
 * LabriePierre
-    
+
 German:
 * eschsa
 * cforce
@@ -91,12 +95,14 @@ Russian:
 * Sergey Bershadsky
 * DarkWanderer
 * Luckyvb
+* SlowProg
+* DiDimus
 
 Spanish:
 * Carlos Solano
 * dtamajon
 
-Swedish:	
+Swedish:
 * Peter Brauner
 
 Turkish:
