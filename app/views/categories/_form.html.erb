@@ -14,7 +14,7 @@ else
   <div id="parent_category" style="display:none;">
     <p>
       <label for="parent_id"><%= l(:label_parent_category) %></label>
-      <%= select_tag :parent_id, options_for_select(nested_set_options(@categories) {|i| "#{'»' * i.level} #{i.title}" }, @parent_id.to_i) %>
+      <%= select_tag :parent_id, options_for_select(nested_set_options(@categories.to_a) {|i| "#{'»' * i.level} #{i.title}" }, @parent_id.to_i) %>
     </p>
   </div>
   <%= hidden_field_tag 'project_id', @project.id %>
