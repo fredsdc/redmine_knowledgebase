@@ -9,7 +9,6 @@
      <p class="nodata"><%=l(:message_no_permissions)%></p>
 <% else %>
 
-
 <div class="contextual">
   <%= render :partial => "categories/jump_box" %>
 
@@ -58,10 +57,6 @@
 	<%= link_to @article.category.title, { :controller => 'categories', :action => 'show', :id => @article.category.id, :project_id => @project} %>
 </p>
 
-<% other_formats_links do |f| %>
-  <%= f.link_to 'PDF', :url => params.to_unsafe_hash %>
-<% end %>
-
 <div class="wiki"><h1><%= @article.title %></h1></div>
 
 <% unless redmine_knowledgebase_settings_value(:disable_article_summaries) %>
@@ -75,13 +70,13 @@
   </div>
 <% end %>
 
+<% other_formats_links do |f| %>
+<%= f.link_to 'PDF', :url => params.to_unsafe_hash %>
+<% end %>
+
 <% unless redmine_knowledgebase_settings_value(:show_article_without_tabs) %>
   <%= render_tabs article_tabs %>
-
 <% else %>
-
-
-
   <% if redmine_knowledgebase_settings_value(:show_attachments_first) %>
     <%= render :partial => "articles/sections/attachments" %>
   <% end %>
@@ -89,14 +84,11 @@
   <h2><%= l(:label_description) %></h2>
   <%= render :partial => "articles/sections/content" %>
 
-
   <h2><%= l(:label_comment_plural) %></h2>
 
   <p><%= link_to_if_authorized l(:label_new_comment), { :controller => "articles", :action => "comment", :article_id => @article.id, :project_id => @project}, :class => "icon icon-comment", :remote => true, :method => :get %></p>
 
   <%= render :partial => "articles/sections/comments" %>
-
-
 
   <% unless redmine_knowledgebase_settings_value(:show_attachments_first) %>
     <%= render :partial => "articles/sections/attachments" %>
@@ -106,7 +98,6 @@
     <h2><%= l(:label_history) %></h2>
     <%= render :partial => "articles/sections/history" %>
   <% end %>
-
 <% end %>
 
 <% end %>
