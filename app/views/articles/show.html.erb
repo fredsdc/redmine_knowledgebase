@@ -9,14 +9,6 @@
      <p class="nodata"><%=l(:message_no_permissions)%></p>
 <% else %>
 
-<div class="contextual">
-  <%= render :partial => "categories/jump_box" %>
-
-  <% if @project.categories.length > 0 %>
-    <%= link_to_if_authorized l(:title_create_article), { :controller => 'articles', :action => 'new', :project_id => @project}, :class => 'icon icon-add' %>
-  <% end %>
-</div>
-
 <% content_for :sidebar do %>
 <ul id="options">
   <% if @article.editable_by?(User.current) %>
@@ -56,6 +48,14 @@
 	&nbsp;&raquo;&nbsp;
 	<%= link_to @article.category.title, { :controller => 'categories', :action => 'show', :id => @article.category.id, :project_id => @project} %>
 </p>
+
+<div class="contextual">
+  <%= render :partial => "categories/jump_box" %>
+
+  <% if @project.categories.length > 0 %>
+  <%= link_to_if_authorized l(:title_create_article), { :controller => 'articles', :action => 'new', :project_id => @project}, :class => 'icon icon-add' %>
+  <% end %>
+</div>
 
 <div class="wiki"><h1><%= @article.title %></h1></div>
 

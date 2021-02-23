@@ -4,11 +4,6 @@
      <p class="nodata"><%=l(:message_no_permissions)%></p>
 <% else %>
 
-
-<div class="contextual">
-  <%= render :partial => "categories/jump_box" %>
-</div>
-
 <p id="category-crumbs" class="breadcrumb">
 	<%= link_to l(:label_kb_home), { :controller => 'articles', :action => 'index', :project_id => @project } %>
 	<% @category.ancestors.each do |ancestor| %>
@@ -16,6 +11,10 @@
 	<%= link_to ancestor.title, { :controller => 'categories', :action => 'show', :id => ancestor.id, :project_id=>@project } %>
 	<% end %>
 </p>
+
+<div class="contextual">
+  <%= render :partial => "categories/jump_box" %>
+</div>
 
 <h2><%= @category.title %></h2>
 
@@ -73,4 +72,3 @@
 
 
 <% end %>
-

@@ -3,7 +3,7 @@
   <%= render :partial => "categories/jump_box" %>
 </div>
 
-<h3><%= l(:label_authored_by) %> <%= link_to_user(User.find(@author_id)) %></h3>
+<h3><%= l(:label_authored_by) %> <%= link_to_user(User.find(@author_id)) %></h3><br>
 
 
 <% content_for :sidebar do %>
@@ -35,4 +35,3 @@
 <% end %>
 
 <span class="pagination"><%= pagination_links_full @article_pages, @article_count %></span>
-
